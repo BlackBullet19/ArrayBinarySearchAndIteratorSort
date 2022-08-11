@@ -12,9 +12,9 @@ public class MainApp {
         List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 4,6, 5, 6, 7, 9)); // 9,7,6,5,4,2,1
         ListIterator<Integer> iterator = list.listIterator();
         ListIterator<Integer> reversedIterator = list.listIterator(list.size());
-        main.print(iterator);
+        System.out.println(list);
         main.reverse(iterator, reversedIterator);
-        main.print(iterator);
+        System.out.println(list);
     }
 
     private void reverse(ListIterator<Integer> iterator, ListIterator<Integer> reversedIterator) {
@@ -23,20 +23,5 @@ public class MainApp {
             iterator.set(reversedIterator.previous());
             reversedIterator.set(tmpValue);
         }
-    }
-
-    private void print(ListIterator<Integer> list) {
-        while(list.hasPrevious()) {
-            list.previous();
-        }
-
-        while (list.hasNext()) {
-            System.out.print(list.next() + " ");
-        }
-
-        while(list.hasPrevious()) {
-            list.previous();
-        }
-        System.out.println();
     }
 }
